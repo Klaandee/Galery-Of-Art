@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Artwork from "../components/galery/Artworks.astro";
+---
+
+<Layout
+    title="Galery Of Art"
+    description=`On this page you can see the best works of art from around the world on this page! You can see the authors and information about them.`
+>
+    <Header home="/" />
+    <h1 class="text-center font-bold text-6xl mt-3">Artworks</h1>
+    <main class="flex justify-center">
+        <div class="cards flex flex-col justify-center gap-6 mt-6">
+            <!-- The starry Night -->
+            <section id="the-starry-night">
+                <Artwork
+                    artlink="https://es.wikipedia.org/wiki/La_noche_estrellada"
+                    artwork="/arts/la-noche-estrellada.jpg"
+                    artname="The starry Night"
+                    author="Vincent van Gogh"
+                    artdsc=`The Starry Night is an oil on canvas painting by the Dutch post-impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room in Saint-Rémy-de-Provence, just before dawn, with the addition of an imaginary village. Van Gogh depicted the view at different times of the day, including sunrise, moonrise, sunny days, cloudy days, windy days, and a rainy day. Although the hospital staff did not allow Van Gogh to paint in his bedroom, there he was able to make sketches in ink or charcoal on paper; Eventually, I would base newer variations on older versions.​​​`
+                />
+            </section>
+            <!-- The Mona Lisa -->
+            <section id="the-mona-lisa">
+                <Artwork
+                    artlink="https://es.wikipedia.org/wiki/La_Gioconda"
+                    artwork="/arts/the-mona-lisa.avif"
+                    artname="The Mona Lisa"
+                    author="Leonardo da Vinci"
+                    artdsc=`The portrait of Lisa Gherardini, wife of Francesco del Giocondo, better known as La Gioconda or Monna Lisa, is a pictorial work of the Italian Renaissance polymath Leonardo da Vinci. It was acquired by King Francis I of France at the beginning of the 16th century and has been property of the French State since then. Through historical studies it has been determined that the model could be a neighbor of Leonardo, that her descendants could be known and that the model could have been pregnant, due to the way she hides her hands.`
+                />
+            </section>
+            <!-- The girl of the pearl -->
+            <section id="the-girl-of-the-pearl">
+                <Artwork
+                    artlink="https://es.wikipedia.org/wiki/La_joven_de_la_perla"
+                    artwork="/arts/la-joven-perla.webp"
+                    artname="The girl of the pearl"
+                    author="Johannes Vermeer"
+                    artdsc=`Girl with a Pearl Earring, also known as Girl with a Turban, is one of the masterpieces of Dutch painter Johannes Vermeer created between 1665 and 1667. As the name suggests, it uses a pearl earring as a focal point. The painting is currently in the Mauritshuis museum in The Hague.`
+                />
+            </section>
+            <!-- The Kiss -->
+            <section id="the-kiss">
+                <Artwork
+                    artlink="https://es.wikipedia.org/wiki/El_beso_(Gustav_Klimt)"
+                    artwork="/arts/the-kiss.jpg"
+                    artname="The kiss"
+                    author="Gustav Klimt"
+                    artdsc=`The Kiss is a work by the Austrian painter Gustav Klimt and probably his best-known work. It is an oil painting with gold and tin flakes on canvas measuring 180 x 180 centimeters, made between 1907-08. This work, which follows the canons of Symbolism, is a canvas with decorations and mosaics on a golden background.`
+                />
+            </section>
+        </div>
+    </main>
+    <div class="mt-8">
+        <Footer />
+    </div>
+</Layout>
+
+<script>
+    window.onload = function () {
+        var sections = document.querySelectorAll("section");
+
+        sections.forEach(function (section) {
+            section.addEventListener("mouseover", function () {
+                var sectionName = section.getAttribute("id");
+                var newUrl =
+                    window.location.origin +
+                    window.location.pathname +
+                    "#" +
+                    sectionName;
+                window.history.replaceState(null, null, newUrl);
+            });
+        });
+    };
+</script>

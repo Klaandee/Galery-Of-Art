@@ -1,0 +1,71 @@
+<section class="mt-2">
+    <h1 class="arts text-center text-7xl font-bold">Here you can see</h1>
+    <div class="flex justify-center mt-6">
+        <a href="/galery">
+            <div class="imagenes">
+                <img
+                    src="/arts/la-joven-perla.webp"
+                    alt="Galery Of Art"
+                    style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;"
+                />
+                <img src="/arts/la-noche-estrellada.jpg" alt="Galery Of Art" />
+                <img src="/arts/the-kiss.jpg" alt="Galery Of Art" />
+                <img
+                    src="/arts/the-mona-lisa.avif"
+                    alt="Galery Of Art"
+                    style="border-top-right-radius: 20px;border-bottom-right-radius: 20px;"
+                />
+            </div>
+        </a>
+    </div>
+</section>
+<style>
+    @media screen and (max-width: 630px) {
+        .arts {
+            font-size: 5rem;
+        }
+        .imagenes {
+            display: flex;
+            width: 500px !important;
+            height: 430px;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .arts {
+            font-size: 3rem;
+        }
+        .imagenes {
+            display: flex;
+            width: 400px !important;
+            height: 430px;
+        }
+    }
+    @media screen and (max-width: 420px) {
+        .arts {
+            font-size: 3rem;
+        }
+        .imagenes {
+            display: flex;
+            width: 300px !important;
+            height: 430px;
+        }
+    }
+    .imagenes {
+        display: flex;
+        width: 600px;
+        height: 430px;
+    }
+    .imagenes img {
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: 1;
+        transition: 0.5s ease;
+    }
+    .imagenes img:hover {
+        cursor: crosshair;
+        width: 300px;
+        opacity: 1;
+        filter: contrast(120%);
+    }
+</style>

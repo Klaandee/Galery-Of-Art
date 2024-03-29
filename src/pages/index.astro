@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Card from "../components/Card.astro";
+import Arts from "../components/Arts.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+	title="Galery Of Art"
+	description=`On this page you can see the best works of art from around the world on this page! You can see the authors and information about them.`
+>
+	<Header galery="/galery" />
+	<main>
+		<Hero
+			heroname="Here you can see Works of Art"
+			herodsc="The best works of art!"
+		/>
+		<Card
+			cardimg="/src-1.jpg"
+			cardname="What is it about?"
+			cardsc=`On this page you can see the best works of art from around the
+		world on this page! You can see the authors and information
+		about them. Enjoy!`
+		/>
+		<Arts />
+		<div class="mt-10">
+			<Footer />
+		</div>
+	</main>
+</Layout>

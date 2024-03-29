@@ -1,0 +1,35 @@
+---
+const { artwork, artname, author, artdsc, artlink } = Astro.props;
+---
+
+<section class="">
+    <a href={artlink} target="_blank">
+    <div class="card bg-gray-100 p-4 rounded-3xl hover:bg-black hover:text-white flex" style="transition: .7s ease-in-out" title="Click to see this Work of Art on Wikipedia!">
+        <img src={artwork} alt="Artwork, Galery Of Art" class="rounded-3xl min-w-80" />
+        <div class="mt-1 ml-2">
+            <h1 class="font-bold text-3xl">{artname}</h1>
+            <p class="font-semibold">by "{author}"</p>
+            <p style="width: 35rem;" class="dsc mt-2">{artdsc}</p>
+        </div>
+    </div>
+    </a>
+</section>
+
+<style>
+    .card:hover {
+        box-shadow: 0px 0px 15px #000;
+    }
+    @media screen and (max-width: 940px) {
+        .card {
+            flex-direction: column;
+        }
+    }
+    @media screen and (max-width: 620px){
+        .card img {
+            width: 15rem;
+        }
+        .dsc {
+            width: 20rem !important;
+        }
+    }
+</style>

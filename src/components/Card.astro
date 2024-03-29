@@ -1,0 +1,26 @@
+---
+const { cardimg, cardname, cardsc } = Astro.props;
+---
+    <section class="flex justify-center mt-5">
+    <div class="card-s flex max-w-xl bg-gray-200 p-2 rounded-3xl">
+        <img src={cardimg} alt="Obras de arte" class="max-w-36 rounded-3xl" />
+        <div class="ml-2">
+            <h1 class="font-bold text-2xl">{cardname}</h1>
+            <p>
+                {cardsc}
+            </p>
+        </div>
+    </div>
+</section>
+<style>
+    @media screen and (max-width: 590px) {
+        .card-s {
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .card-s img {
+            display: none;
+        }
+    }
+</style>

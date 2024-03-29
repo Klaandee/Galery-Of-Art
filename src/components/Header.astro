@@ -1,0 +1,31 @@
+---
+const { home, galery } = Astro.props;
+---
+<header class="text-center mt-3">
+    <a href="/" class="hover:underline"><h1 class="text-6xl font-bold">Galery ART</h1></a>
+    <p class="mt-2 text-xl">Galery Of Art - Art is ART</p>
+    <nav>
+        <ul class="flex justify-center gap-2 font-extrabold">
+            <li class="hover:underline cursor-pointer"><a href={home}>Home</a></li>
+            <li class="hover:underline cursor-pointer"><a href={galery}>Galery</a></li>
+        </ul>
+    </nav>
+    <div class="flex justify-center mt-3">
+        <div class="linea w-4/12 bg-black" style="height: 0.01rem;"></div>
+    </div>
+</header>
+<style>
+    @media screen and (max-width: 600px) {
+        li {
+            font-size: 1.50rem;
+        }
+        .linea {
+            width: 23rem;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .linea {
+            width: 18rem;
+        }
+    }
+</style>
